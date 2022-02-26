@@ -9,9 +9,9 @@ const Header = (props) => {
     const [auth, setAuth] = useState('Ada Lovelace')
 
     const getRandomQuote = async() =>{
-        const response = await fetch(`http://quotes.stormconsultancy.co.uk/random.json`);
+        const response = await fetch(`https://programming-quotes-api.herokuapp.com/Quotes/random`);
         const res = await response.json();
-        setQuote(res.quote)
+        setQuote(res.en)
         setAuth(res.author)
         //fetches random quote each time the refresh button is pressed
     }
