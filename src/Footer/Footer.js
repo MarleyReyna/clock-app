@@ -10,7 +10,7 @@ const Footer = (props) => {
     useEffect(() =>{
         const abortCont = new AbortController();
     
-        fetch(`http://worldtimeapi.org/api/ip`, {signal: abortCont.signal})
+        fetch(`https://worldtimeapi.org/api/ip`, {signal: abortCont.signal})
           .then((res) => res.json())
           .then((response) =>{
             setData(response)
