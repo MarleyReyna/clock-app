@@ -16,7 +16,7 @@ const Main = (props) => {
     const [country, setCountry] = useState('')
 
     const getLocation = async() =>{
-        const response = await fetch(`http://ip-api.com/json/`);
+        const response = await fetch(`https://ip-api.com/json/`);
         const res = await response.json();
         setCity(res.city)
         setCountry(res.region)

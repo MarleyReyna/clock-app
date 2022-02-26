@@ -22,7 +22,7 @@ const App = () => {
   }
 
   const getTime = async() =>{
-    const response = await fetch(`http://worldtimeapi.org/api/ip`);
+    const response = await fetch(`https://worldtimeapi.org/api/ip`);
     const res = await response.json();
     setTime(((res.datetime.split('T'))[1].split('.'))[0].slice(0, 5))
     getDay(((res.datetime.split('T'))[1].split('.'))[0].slice(0, 5))
