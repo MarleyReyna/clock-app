@@ -1,0 +1,126 @@
+@keyframes grow {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.footer {
+  display: none;
+}
+
+.footer.active {
+  display: flex;
+  justify-content: center;
+  min-width: 100%;
+  padding: 0 2rem;
+  margin: -2.625rem -2rem 0;
+  z-index: 1;
+  backdrop-filter: blur(40.7742px);
+  animation: grow 1s ease;
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(auto, 580px));
+    grid-template-rows: 9.1875rem 6.5625rem;
+    width: 100%;
+    margin: 4.625rem 0;
+    max-width: 69.375rem;
+    list-style: none;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      max-width: 36.25rem;
+
+      h4 {
+        font-size: 15px;
+        line-height: 28px;
+        font-weight: normal;
+        letter-spacing: 3px;
+        margin-bottom: 0.5625rem;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: clamp(40px, 3.88889vw, 56px);
+        line-height: 68px;
+        font-weight: bold;
+      }
+    }
+
+    .border-left {
+      border-left: solid 1px #535055;
+      padding-left: 5.875rem;
+    }
+  }
+}
+
+#daytime-footer {
+  color: #303030;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+#nighttime-footer {
+  color: white;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+@media only screen and (max-width: 768px) {
+  .footer.active {
+    margin: 0 -2rem;
+    padding: 0 2rem;
+    ul {
+      grid-template-rows: initial;
+      max-width: 40rem;
+      width: 100%;
+      margin: 6.4375rem 0;
+      gap: 3rem 0;
+
+      li {
+        h4 {
+          font-size: clamp(10px, 1.693vw, 13px);
+          margin-bottom: 1px;
+        }
+
+        p {
+          font-size: clamp(20px, 5.20834vw, 40px);
+          line-height: 48px;
+        }
+      }
+
+      .border-left {
+        border: none;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .footer.active {
+    margin: 0 -0.5rem 0 -1.625rem;
+    padding: 0 1.625rem;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      margin: 3rem 0;
+      gap: 1rem 0;
+
+      li {
+        flex-direction: row;
+        justify-content: space-between;
+
+        h4 {
+          margin-bottom: 0;
+        }
+        p {
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}

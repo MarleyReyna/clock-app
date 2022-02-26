@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 0 2rem;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+.App::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  display: block;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.App.more-info {
+  justify-content: flex-end;
+}
+
+#Daytime {
+  background-image: url("./bg-image-daytime.jpg");
+}
+
+#Nighttime {
+  background-image: url("./bg-image-nighttime.jpg");
+}
+
+@media only screen and (max-width: 28.125rem) {
+  .App {
+    padding: 0 0.5rem 0 1.625rem;
+  }
+}
