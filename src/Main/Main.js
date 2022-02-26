@@ -16,10 +16,11 @@ const Main = (props) => {
     const [country, setCountry] = useState('')
 
     const getLocation = async() =>{
-        const response = await fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.REACT_APP_LOCATION_API_KEY}`);
+        const response = await fetch(`https://freegeoip.app/json/`);
         const res = await response.json();
+        console.log(res)
         setCity(res.city)
-        setCountry(res.country_code2)
+        setCountry(res.region_code)
         //fetches users city and country
     }
 
