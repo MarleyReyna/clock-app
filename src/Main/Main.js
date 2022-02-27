@@ -16,11 +16,11 @@ const Main = (props) => {
     const [country, setCountry] = useState('')
 
     const getLocation = async() =>{
-        const response = await fetch(`https://ipwhois.app/json/`);
+        const response = await fetch(`http://ip-api.com/json/`);
         const res = await response.json();
         console.log(res)
         setCity(res.city)
-        setCountry(res.country_code)
+        setCountry(res.region)
         //fetches users city and country
     }
 
