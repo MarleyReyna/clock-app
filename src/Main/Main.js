@@ -17,7 +17,7 @@ const Main = (props) => {
     const [country, setCountry] = useState('')
 
     const getLocation = async() =>{
-        const response = await fetch(`https://ipinfo.io?token=${api_key}`);
+        const response = await fetch(`https://ipinfo.io/json?token=${process.env.REACT_APP_API_KEY}`);
         const res = await response.json();
         console.log(res)
         setCity(res.city)
