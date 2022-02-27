@@ -11,12 +11,13 @@ const Main = (props) => {
     const time = props.time;
     const timezone = props.timezone;
     const day = props.day;
+    const api_key = process.env.API_KEY;
 
     const [city, setCity] = useState('')
     const [country, setCountry] = useState('')
 
     const getLocation = async() =>{
-        const response = await fetch(`https://ipinfo.io?token=${process.env.API_KEY}`);
+        const response = await fetch(`https://ipinfo.io?token=${api_key}`);
         const res = await response.json();
         console.log(res)
         setCity(res.city)
