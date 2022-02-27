@@ -16,7 +16,7 @@ const Main = (props) => {
     const [country, setCountry] = useState('')
 
     const getLocation = async() =>{
-        const response = await fetch(`http://ip-api.com/json/?fields=61439`);
+        const response = await fetch(`https://ipinfo.io?token=${process.env.API_KEY}`);
         const res = await response.json();
         console.log(res)
         setCity(res.city)
