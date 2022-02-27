@@ -20,7 +20,7 @@ const Main = (props) => {
         const res = await response.json();
         console.log(res)
         setCity(res.city)
-        setCountry(res.region)
+        setCountry(res.country_code3)
         //fetches users city and country
     }
 
