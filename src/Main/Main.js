@@ -16,7 +16,7 @@ const Main = (props) => {
     const [country, setCountry] = useState('')
 
     const getLocation = async() =>{
-        const response = await fetch(`http://ipwhois.app/json/`);
+        const response = await fetch(`https://ipwhois.app/json/`);
         const res = await response.json();
         console.log(res)
         setCity(res.city)
