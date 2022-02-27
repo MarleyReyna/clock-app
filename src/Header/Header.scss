@@ -35,10 +35,18 @@ header {
       border: none;
       margin-top: 0.625rem;
       background-color: transparent;
+
+      img {
+        transition: all 500ms ease;
+      }
     }
 
     button:hover {
       cursor: pointer;
+
+      img {
+        transform: rotate(360deg);
+      }
     }
   }
 
