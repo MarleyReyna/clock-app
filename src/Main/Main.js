@@ -18,7 +18,6 @@ const Main = (props) => {
     const getLocation = async() =>{
         const response = await fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.REACT_APP_API_KEY}`);
         const res = await response.json();
-        console.log(res)
         setCity(res.city)
         setCountry(res.country_code2)
         //fetches users city and country
