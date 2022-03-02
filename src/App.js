@@ -30,6 +30,7 @@ const App = () => {
     getDay(((res.datetime.split('T'))[1].split('.'))[0].slice(0, 5))
     setTimezone(res.abbreviation)
     setLoading(false)
+    console.log('app')
     //fetches time, timezone and calls getDay
   };
 
