@@ -10,6 +10,7 @@ const App = () => {
   const [time, setTime] = useState('');
   const [timezone, setTimezone] = useState('');
   const [day, setDay] = useState(null);
+  const [loading, setLoading] = useState(true)
 
   const getDay = (hourTime) =>{  //Sets whether its night or day depending on the hour 
     const hour = (hourTime.split(':'))[0];
@@ -39,16 +40,13 @@ const App = () => {
   return (
     <div className={more ? 'App more-info' : 'App'} 
     id={day ? 'Daytime' : day === false ? 'Nighttime' : null}>
-      <Header 
-      more={more}/>
-      <Main 
-      more={more}
+      <Header more={more}/>
+      <Main more={more}
       setMore={setMore}
       time={time}
       timezone={timezone}
       day={day}/>
-      <Footer 
-      more={more}
+      <Footer more={more}
       day={day}/>
     </div>
   );
