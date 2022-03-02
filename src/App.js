@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Header from './Header/Header';
 import Main from './Main/Main';
-import Footer from './Footer/Footer'
+import Footer from './Footer/Footer';
+import Hashloader from "react-spinners/HashLoader";
 
 const App = () => {
 
@@ -28,6 +29,7 @@ const App = () => {
     setTime(((res.datetime.split('T'))[1].split('.'))[0].slice(0, 5))
     getDay(((res.datetime.split('T'))[1].split('.'))[0].slice(0, 5))
     setTimezone(res.abbreviation)
+    setLoading(false)
     //fetches time, timezone and calls getDay
   };
 
