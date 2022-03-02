@@ -3,7 +3,6 @@ import './App.css';
 import Header from './Header/Header';
 import Main from './Main/Main';
 import Footer from './Footer/Footer';
-import Hashloader from "react-spinners/HashLoader";
 
 const App = () => {
 
@@ -26,9 +25,8 @@ const App = () => {
     const response = await fetch(`https://worldtimeapi.org/api/ip`);
     const res = await response.json();
     setTime(((res.datetime.split('T'))[1].split('.'))[0].slice(0, 5))
-    // getDay(((res.datetime.split('T'))[1].split('.'))[0].slice(0, 5))
-    // setTimezone(res.abbreviation)
-    console.log('app')
+    getDay(((res.datetime.split('T'))[1].split('.'))[0].slice(0, 5))
+    setTimezone(res.abbreviation)
 
     //fetches time, timezone and calls getDay
   };
@@ -36,7 +34,7 @@ const App = () => {
   useEffect(() =>{
     getTime().catch(error => {console.error(error)});
 
-    // setInterval(getTime, 60000)
+    setInterval(getTime, 60000)
   })
 
   return (
