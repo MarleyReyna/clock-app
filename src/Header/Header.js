@@ -13,7 +13,6 @@ const Header = (props) => {
         const res = await response.json();
         setQuote(res.en)
         setAuth(res.author)
-        console.log('header')
         //fetches random quote each time the refresh button is pressed
     }
 

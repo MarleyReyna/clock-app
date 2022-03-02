@@ -11,7 +11,6 @@ const App = () => {
   const [time, setTime] = useState('');
   const [timezone, setTimezone] = useState('');
   const [day, setDay] = useState(null);
-  const [loading, setLoading] = useState(true)
 
   const getDay = (hourTime) =>{  //Sets whether its night or day depending on the hour 
     const hour = (hourTime.split(':'))[0];
@@ -27,17 +26,17 @@ const App = () => {
     const response = await fetch(`https://worldtimeapi.org/api/ip`);
     const res = await response.json();
     setTime(((res.datetime.split('T'))[1].split('.'))[0].slice(0, 5))
-    getDay(((res.datetime.split('T'))[1].split('.'))[0].slice(0, 5))
-    setTimezone(res.abbreviation)
-    setLoading(false)
+    // getDay(((res.datetime.split('T'))[1].split('.'))[0].slice(0, 5))
+    // setTimezone(res.abbreviation)
     console.log('app')
+
     //fetches time, timezone and calls getDay
   };
 
   useEffect(() =>{
     getTime().catch(error => {console.error(error)});
 
-    setInterval(getTime, 60000)
+    // setInterval(getTime, 60000)
   })
 
   return (

@@ -14,7 +14,6 @@ const Footer = (props) => {
           .then((res) => res.json())
           .then((response) =>{
             setData(response)
-            console.log('footer')
         }) 
         .catch(err => {
           if(err.name === 'AbortError'){
