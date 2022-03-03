@@ -16,11 +16,11 @@ const Main = (props) => {
     const [country, setCountry] = useState('')
 
     const getLocation = async() =>{
-        const response = await fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.REACT_APP_API_KEY}`);
+        const response = await fetch(`https://ipapi.co/json/`);
         const res = await response.json();
         setCity(res.city)
-        setCountry(res.country_code2)
-        
+        setCountry(res.region_code)
+
         //fetches users city and country
     }
 
