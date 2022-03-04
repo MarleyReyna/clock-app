@@ -9,17 +9,18 @@ const Footer = (props) => {
 
     useEffect(() =>{
         const abortCont = new AbortController();
-    
-        fetch(`https://worldtimeapi.org/api/ip`, {signal: abortCont.signal})
-          .then((res) => res.json())
-          .then((response) =>{
-            setData(response)
-        }) 
-        .catch(err => {
-          if(err.name === 'AbortError'){
-            console.log('abort')
-          }
-          console.error(err)
+
+        const getData = async() =>{
+            const response = await fetch(`https://worldtimeapi.org/api/ip`, {signal: abortCont.signal})
+            const res = await response.json();
+            setData(res)
+        }
+
+        getData().catch(err => {
+              if(err.name === 'AbortError'){
+                console.log('abort')
+              }
+              console.error(err)
         })
     
         return () => abortCont.abort();
